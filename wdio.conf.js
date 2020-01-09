@@ -164,6 +164,11 @@ exports.config = {
      */
     before: function (capabilities, specs) {
         require("@babel/register");
+        //slow down internet
+        browser.setNetworkConditions({
+            latency: 2000,
+            throughput: 450*1024,
+        })
      },
     /**
      * Runs before a WebdriverIO command gets executed.
